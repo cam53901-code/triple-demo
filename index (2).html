@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Group - Plumbing | Construction & Redevelopment | Building Envelopes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CUSTOMIZATION GUIDE
+           ============================================
+           
+           1. FORMSPREE CODE: Search for "YOUR_FORMSPREE_CODE" below
+              - Each contact form has its own Formspree endpoint
+              - Replace with your actual Formspree form IDs
+              - Example: https://formspree.io/f/xpzkgqwe
+           
+           2. EMAIL RECIPIENT: Configured in Formspree dashboard
+              - Log into your Formspree account
+              - Go to each form's settings
+              - Update the email recipient in the "Notifications" tab
+           
+           3. BRANDING: Search for "BRAND_" comments
+              - Customize colors, company names, and content
+              - Images use Unsplash - replace URLs with your own photos
+        ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* BRAND_: Primary brand colors - customize these */
+            --brand-primary: #0a0a0a;
+            --brand-secondary: #1a1a1a;
+            --brand-accent: #c9a84c;
+            --brand-accent-light: #e8d48b;
+            
+            /* PLUMBING - Industrial Blue Theme */
+            --plumbing-primary: #1e3a5f;
+            --plumbing-secondary: #2c5282;
+            --plumbing-accent: #4299e1;
+            --plumbing-light: #ebf8ff;
+            --plumbing-dark: #0d1b2a;
+            
+            /* CONSTRUCTION - Earthy Orange Theme */
+            --construction-primary: #7c2d12;
+            --construction-secondary: #c2410c;
+            --construction-accent: #fb923c;
+            --construction-light: #fff7ed;
+            --construction-dark: #431407;
+            
+            /* BUILDING ENVELOPES - Modern Green Theme */
+            --envelope-primary: #064e3b;
+            --envelope-secondary: #047857;
+            --envelope-accent: #34d399;
+            --envelope-light: #ecfdf5;
+            --envelope-dark: #022c22;
+            
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 0;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--brand-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 1.5rem 1.25rem;
+            display: block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--brand-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* ============================================
+           HERO SECTION - Grand Unified Introduction
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(66, 153, 225, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(52, 211, 153, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(201, 168, 76, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 168, 76, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--brand-accent);
+            color: var(--brand-accent);
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .accent {
+            color: var(--brand-accent);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-companies {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .hero-company {
+            text-align: center;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            min-width: 180px;
+        }
+
+        .hero-company:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-accent);
+            background: rgba(201, 168, 76, 0.1);
+        }
+
+        .hero-company-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .hero-company-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .hero-company.plumbing:hover {
+            border-color: var(--plumbing-accent);
+            background: rgba(66, 153, 225, 0.1);
+        }
+
+        .hero-company.construction:hover {
+            border-color: var(--construction-accent);
+            background: rgba(251, 146, 60, 0.1);
+        }
+
+        .hero-company.envelope:hover {
+            border-color: var(--envelope-accent);
+            background: rgba(52, 211, 153, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--brand-accent), transparent);
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.5; transform: scaleY(0.5); }
+            100% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* ============================================
+           COMPANY SECTIONS - Unique Themes
+           ============================================ */
+        
+        /* Section Base Styles */
+        .company-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================
+           PLUMBING SECTION - Industrial Blue Theme
+           Design: Clean lines, mechanical feel, water elements
+           ============================================ */
+        .plumbing-section {
+            background: linear-gradient(180deg, #0d1b2a 0%, #1e3a5f 100%);
+            color: var(--text-light);
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .plumbing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(66, 153, 225, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(66, 153, 225, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .plumbing-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(66, 153, 225, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(66, 153, 225, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .plumbing-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .plumbing-label {
+            color: var(--plumbing-accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .plumbing-header h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a8d8ea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .plumbing-header p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .plumbing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .plumbing-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .plumbing-img {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .plumbing-img:hover {
+            transform: scale(1.02);
+        }
+
+        .plumbing-img:first-child {
+            grid-column: span 2;
+            height: 300px;
+        }
+
+        .plumbing-img:last-child {
+            height: 200px;
+        }
+
+        .plumbing-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .img-overlay span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .plumbing-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .plumbing-description {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(66, 153, 225, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .plumbing-description h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--plumbing-accent);
+        }
+
+        .plumbing-description p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .service-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .plumbing-section .service-icon {
+            background: var(--plumbing-accent);
+            color: var(--plumbing-dark);
+        }
+
+        .plumbing-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(66, 153, 225, 0.1);
+            border: 1px solid rgba(66, 153, 225, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(66, 153, 225, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .plumbing-section .stat-number {
+            color: var(--plumbing-accent);
+        }
+
+        .stat-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Plumbing Contact Form */
+        .plumbing-form-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(66, 153, 225, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-light);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--plumbing-accent);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group select option {
+            background: var(--plumbing-dark);
+            color: var(--text-light);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            color: var(--text-light);
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .plumbing-section .submit-btn {
+            background: linear-gradient(135deg, var(--plumbing-accent), var(--plumbing-secondary));
+        }
+
+        .plumbing-section .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(66, 153, 225, 0.4);
+        }
+
+        /* ============================================
+           CONSTRUCTION SECTION - Earthy Orange Theme
+           Design: Bold, strong, architectural feel
+           ============================================ */
+        .construction-section {
+            background: var(--construction-light);
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .construction-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(30deg, rgba(194, 65, 12, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(194, 65, 12, 0.03) 87.5%, rgba(194, 65, 12, 0.03)),
+                linear-gradient(150deg, rgba(194, 65, 12, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(194, 65, 12, 0.03) 87.5%, rgba(194, 65, 12, 0.03)),
+                linear-gradient(30deg, rgba(194, 65, 12, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(194, 65, 12, 0.03) 87.5%, rgba(194, 65, 12, 0.03)),
+                linear-gradient(150deg, rgba(194, 65, 12, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(194, 65, 12, 0.03) 87.5%, rgba(194, 65, 12, 0.03));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            pointer-events: none;
+        }
+
+        .construction-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .construction-label {
+            color: var(--construction-secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .construction-header h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--construction-dark);
+        }
+
+        .construction-header p {
+            font-size: 1.15rem;
+            color: #6b5a4e;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .construction-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .construction-content {
+            order: 2;
+        }
+
+        .construction-images {
+            order: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .construction-img {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(124, 45, 18, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .construction-img:hover {
+            transform: scale(1.02);
+        }
+
+        .construction-img:first-child {
+            grid-column: span 2;
+            height: 300px;
+        }
+
+        .construction-img:last-child {
+            height: 200px;
+        }
+
+        .construction-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .construction-description {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(124, 45, 18, 0.08);
+            border-left: 4px solid var(--construction-accent);
+        }
+
+        .construction-description h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--construction-primary);
+        }
+
+        .construction-description p {
+            color: #5a4a3e;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .construction-section .services-grid {
+            margin-bottom: 2rem;
+        }
+
+        .construction-section .service-item {
+            color: #5a4a3e;
+        }
+
+        .construction-section .service-icon {
+            background: var(--construction-accent);
+            color: var(--construction-dark);
+        }
+
+        .construction-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .construction-section .stat-card {
+            background: white;
+            border: 1px solid rgba(194, 65, 12, 0.15);
+            box-shadow: 0 4px 15px rgba(124, 45, 18, 0.05);
+        }
+
+        .construction-section .stat-card:hover {
+            border-color: var(--construction-accent);
+            box-shadow: 0 8px 25px rgba(124, 45, 18, 0.1);
+        }
+
+        .construction-section .stat-number {
+            color: var(--construction-secondary);
+        }
+
+        .construction-section .stat-label {
+            color: #8b7355;
+        }
+
+        /* Construction Contact Form */
+        .construction-form-container {
+            background: white;
+            border: 1px solid rgba(194, 65, 12, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            box-shadow: 0 20px 60px rgba(124, 45, 18, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .construction-form-container .form-header h3 {
+            color: var(--construction-primary);
+        }
+
+        .construction-form-container .form-header p {
+            color: #8b7355;
+        }
+
+        .construction-form-container .form-group label {
+            color: var(--construction-dark);
+        }
+
+        .construction-form-container .form-group input,
+        .construction-form-container .form-group textarea,
+        .construction-form-container .form-group select {
+            border-color: rgba(194, 65, 12, 0.2);
+            background: rgba(255, 247, 237, 0.5);
+            color: var(--text-dark);
+        }
+
+        .construction-form-container .form-group input::placeholder,
+        .construction-form-container .form-group textarea::placeholder {
+            color: #b0a090;
+        }
+
+        .construction-form-container .form-group input:focus,
+        .construction-form-container .form-group textarea:focus,
+        .construction-form-container .form-group select:focus {
+            border-color: var(--construction-accent);
+            box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.2);
+            background: white;
+        }
+
+        .construction-form-container .form-group select option {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .construction-section .submit-btn {
+            background: linear-gradient(135deg, var(--construction-secondary), var(--construction-primary));
+        }
+
+        .construction-section .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(194, 65, 12, 0.4);
+        }
+
+        /* ============================================
+           BUILDING ENVELOPES SECTION - Modern Green Theme
+           Design: Clean, modern, eco-forward feel
+           ============================================ */
+        .envelope-section {
+            background: linear-gradient(180deg, #022c22 0%, #064e3b 50%, #022c22 100%);
+            color: var(--text-light);
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .envelope-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(ellipse at 20% 50%, rgba(52, 211, 153, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .envelope-grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(52, 211, 153, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(52, 211, 153, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .envelope-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .envelope-label {
+            color: var(--envelope-accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .envelope-header h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .envelope-header p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .envelope-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .envelope-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .envelope-img {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .envelope-img:hover {
+            transform: scale(1.02);
+        }
+
+        .envelope-img:first-child {
+            grid-column: span 2;
+            height: 300px;
+        }
+
+        .envelope-img:last-child {
+            height: 200px;
+        }
+
+        .envelope-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .envelope-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .envelope-description {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .envelope-description h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--envelope-accent);
+        }
+
+        .envelope-description p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .envelope-section .services-grid {
+            margin-bottom: 0;
+        }
+
+        .envelope-section .service-item {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .envelope-section .service-icon {
+            background: var(--envelope-accent);
+            color: var(--envelope-dark);
+        }
+
+        .envelope-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .envelope-section .stat-card {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .envelope-section .stat-card:hover {
+            background: rgba(52, 211, 153, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .envelope-section .stat-number {
+            color: var(--envelope-accent);
+        }
+
+        .envelope-section .stat-label {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Envelope Contact Form */
+        .envelope-form-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .envelope-form-container .form-header h3 {
+            color: var(--envelope-accent);
+        }
+
+        .envelope-form-container .form-header p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .envelope-section .submit-btn {
+            background: linear-gradient(135deg, var(--envelope-accent), var(--envelope-secondary));
+        }
+
+        .envelope-section .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(52, 211, 153, 0.4);
+        }
+
+        /* ============================================
+           UNIFIED BRAND SECTION
+           ============================================ */
+        .brand-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: var(--text-light);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+        }
+
+        .brand-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-label {
+            color: var(--brand-accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .brand-section h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .brand-section > p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            opacity: 0.8;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .brand-values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .value-card {
+            padding: 3rem 2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-accent);
+            background: rgba(201, 168, 76, 0.05);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--brand-accent);
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: #050505;
+            color: var(--text-light);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            padding-right: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .footer-brand h3 span {
+            color: var(--brand-accent);
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--brand-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--text-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           FORM SUCCESS MESSAGE
+           ============================================ */
+        .form-success {
+            display: none;
+            background: rgba(52, 211, 153, 0.15);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            color: #a7f3d0;
+            padding: 1.25rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .construction-form-container .form-success {
+            background: rgba(251, 146, 60, 0.15);
+            border-color: rgba(251, 146, 60, 0.3);
+            color: #fbbf24;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .plumbing-grid,
+            .construction-grid,
+            .envelope-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .construction-content {
+                order: 1;
+            }
+
+            .construction-images {
+                order: 2;
+            }
+
+            .brand-values {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-companies {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero-company {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .plumbing-header h2,
+            .construction-header h2,
+            .envelope-header h2,
+            .brand-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .plumbing-images,
+            .construction-images,
+            .envelope-images {
+                grid-template-columns: 1fr;
+            }
+
+            .plumbing-img:first-child,
+            .construction-img:first-child,
+            .envelope-img:first-child {
+                grid-column: span 1;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .plumbing-stats,
+            .construction-stats,
+            .envelope-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Unified<span>Group</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#plumbing">Plumbing</a></li>
+                <li><a href="#construction">Construction</a></li>
+                <li><a href="#envelopes">Envelopes</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Established Excellence</span>
+            <h1>Three Companies.<br><span class="accent">One Vision.</span></h1>
+            <p class="hero-subtitle">Expert plumbing, construction & redevelopment, and building envelope solutions — united by quality, integrity, and an unwavering commitment to excellence.</p>
+            <div class="hero-companies">
+                <a href="#plumbing" class="hero-company plumbing">
+                    <span class="hero-company-icon">🔧</span>
+                    <span class="hero-company-name">Plumbing</span>
+                </a>
+                <a href="#construction" class="hero-company construction">
+                    <span class="hero-company-icon">🏗️</span>
+                    <span class="hero-company-name">Construction</span>
+                </a>
+                <a href="#envelopes" class="hero-company envelope">
+                    <span class="hero-company-icon">🏢</span>
+                    <span class="hero-company-name">Envelopes</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PLUMBING SECTION - Industrial Blue Theme
+         ============================================ -->
+    <section class="company-section plumbing-section" id="plumbing">
+        <div class="plumbing-pattern"></div>
+        <div class="section-container">
+            <div class="plumbing-header">
+                <span class="section-label plumbing-label">Specialized Division</span>
+                <h2>Plumbing Services</h2>
+                <p>Professional plumbing solutions for residential, commercial, and industrial properties. Available 24/7 for emergencies with rapid response times.</p>
+            </div>
+
+            <div class="plumbing-grid">
+                <div class="plumbing-images">
+                    <!-- 
+                        BRAND_: PLUMBING IMAGES
+                        Replace these Unsplash URLs with your own images
+                        Recommended size: 800x600px minimum
+                    -->
+                    <div class="plumbing-img">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&h=400&fit=crop" alt="Professional plumbing work">
+                        <div class="img-overlay">
+                            <span>Expert Craftsmanship</span>
+                        </div>
+                    </div>
+                    <div class="plumbing-img">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop" alt="Modern bathroom fixtures">
+                        <div class="img-overlay">
+                            <span>Modern Solutions</span>
+                        </div>
+                    </div>
+                    <div class="plumbing-img">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&h=300&fit=crop" alt="Plumbing tools and equipment">
+                        <div class="img-overlay">
+                            <span>Professional Tools</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plumbing-content">
+                    <div class="plumbing-description">
+                        <h3>Trusted Plumbing Experts</h3>
+                        <p>Our plumbing division brings decades of experience to every project. From routine maintenance to complex installations, our licensed professionals deliver reliable, code-compliant work that stands the test of time.</p>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Residential & Commercial</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>24/7 Emergency Repairs</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Pipe Installation</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Water Heater Services</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Drain & Sewer Cleaning</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Kitchen & Bath Renovations</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Backflow Prevention</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Water Treatment Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plumbing-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Emergency Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plumbing Contact Form -->
+            <div class="plumbing-form-container">
+                <div class="form-header">
+                    <h3>Contact Our Plumbing Team</h3>
+                    <p>Get a free estimate for your plumbing project</p>
+                </div>
+                <!-- 
+                     ============================================
+                     FORMSPREE FORM #1 - PLUMBING
+                     
+                     TO CHANGE FORMSPREE CODE:
+                     Replace "YOUR_FORMSPREE_CODE_PLUMBING" 
+                     below with your actual Formspree form ID.
+                     
+                     Example: https://formspree.io/f/xpzkgqwe
+                     
+                     TO CHANGE EMAIL RECIPIENT:
+                     Log into Formspree.io → Select this form → 
+                     Settings → Notifications → Update email
+                     ============================================
+                -->
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE_PLUMBING" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="plumbing-name">Full Name *</label>
+                            <input type="text" id="plumbing-name" name="name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="plumbing-email">Email Address *</label>
+                            <input type="email" id="plumbing-email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="plumbing-phone">Phone Number</label>
+                            <input type="tel" id="plumbing-phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="plumbing-service">Service Needed</label>
+                            <select id="plumbing-service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="residential">Residential Plumbing</option>
+                                <option value="commercial">Commercial Plumbing</option>
+                                <option value="emergency">Emergency Repair</option>
+                                <option value="installation">New Installation</option>
+                                <option value="renovation">Renovation</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="plumbing-message">Project Details *</label>
+                            <textarea id="plumbing-message" name="message" required placeholder="Tell us about your plumbing needs, timeline, and any specific requirements..."></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Plumbing Inquiry - Unified Group">
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit" class="submit-btn">Send Plumbing Inquiry</button>
+                </form>
+                <div class="form-success" id="plumbing-success">
+                    ✓ Thank you! Our plumbing team will contact you within 24 hours.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONSTRUCTION SECTION - Earthy Orange Theme
+         ============================================ -->
+    <section class="company-section construction-section" id="construction">
+        <div class="construction-pattern"></div>
+        <div class="section-container">
+            <div class="construction-header">
+                <span class="section-label construction-label">Full-Service Division</span>
+                <h2>Construction & Redevelopment</h2>
+                <p>Transforming spaces with precision, quality craftsmanship, and on-time delivery. From ground-up builds to complete redevelopment projects.</p>
+            </div>
+
+            <div class="construction-grid">
+                <div class="construction-images">
+                    <!-- 
+                        BRAND_: CONSTRUCTION IMAGES
+                        Replace these Unsplash URLs with your own images
+                        Recommended size: 800x600px minimum
+                    -->
+                    <div class="construction-img">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=400&fit=crop" alt="Construction site with modern building">
+                        <div class="img-overlay">
+                            <span>Building Excellence</span>
+                        </div>
+                    </div>
+                    <div class="construction-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" alt="Construction workers on site">
+                        <div class="img-overlay">
+                            <span>Expert Teams</span>
+                        </div>
+                    </div>
+                    <div class="construction-img">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop" alt="Modern construction project">
+                        <div class="img-overlay">
+                            <span>Modern Methods</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="construction-content">
+                    <div class="construction-description">
+                        <h3>Building Tomorrow, Today</h3>
+                        <p>Our construction and redevelopment team specializes in turning visions into reality. Whether it's a ground-up build, a major renovation, or a complete redevelopment project, we bring expertise, innovation, and meticulous attention to detail to every job site.</p>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>General Contracting</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>New Construction</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Commercial Redevelopment</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Residential Renovations</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Design-Build Services</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Project Management</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Site Development</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Permitting & Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="construction-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">$50M+</span>
+                            <span class="stat-label">Project Value</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">On-Time Completion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Construction Contact Form -->
+            <div class="construction-form-container">
+                <div class="form-header">
+                    <h3>Contact Our Construction Team</h3>
+                    <p>Let's discuss your next construction or redevelopment project</p>
+                </div>
+                <!-- 
+                     ============================================
+                     FORMSPREE FORM #2 - CONSTRUCTION & REDEVELOPMENT
+                     
+                     TO CHANGE FORMSPREE CODE:
+                     Replace "YOUR_FORMSPREE_CODE_CONSTRUCTION" 
+                     below with your actual Formspree form ID.
+                     
+                     Example: https://formspree.io/f/xpzkgqwe
+                     
+                     TO CHANGE EMAIL RECIPIENT:
+                     Log into Formspree.io → Select this form → 
+                     Settings → Notifications → Update email
+                     ============================================
+                -->
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE_CONSTRUCTION" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="construction-name">Full Name *</label>
+                            <input type="text" id="construction-name" name="name" required placeholder="Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-email">Email Address *</label>
+                            <input type="email" id="construction-email" name="email" required placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-phone">Phone Number</label>
+                            <input type="tel" id="construction-phone" name="phone" placeholder="(555) 987-6543">
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-project">Project Type</label>
+                            <select id="construction-project" name="project_type">
+                                <option value="">Select project type...</option>
+                                <option value="new_construction">New Construction</option>
+                                <option value="renovation">Renovation</option>
+                                <option value="redevelopment">Redevelopment</option>
+                                <option value="commercial">Commercial Build</option>
+                                <option value="residential">Residential Build</option>
+                                <option value="design_build">Design-Build</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-budget">Estimated Budget</label>
+                            <select id="construction-budget" name="budget">
+                                <option value="">Select range...</option>
+                                <option value="under_50k">Under $50,000</option>
+                                <option value="50k_100k">$50,000 - $100,000</option>
+                                <option value="100k_500k">$100,000 - $500,000</option>
+                                <option value="500k_1m">$500,000 - $1 Million</option>
+                                <option value="over_1m">Over $1 Million</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-timeline">Desired Timeline</label>
+                            <select id="construction-timeline" name="timeline">
+                                <option value="">Select timeline...</option>
+                                <option value="immediate">Immediate (within 30 days)</option>
+                                <option value="1_3_months">1-3 Months</option>
+                                <option value="3_6_months">3-6 Months</option>
+                                <option value="6_plus">6+ Months</option>
+                                <option value="planning">Just Planning</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="construction-message">Project Details *</label>
+                            <textarea id="construction-message" name="message" required placeholder="Describe your construction or redevelopment project, including location, scope, and any special requirements..."></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Construction Inquiry - Unified Group">
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit" class="submit-btn">Send Construction Inquiry</button>
+                </form>
+                <div class="form-success" id="construction-success">
+                    ✓ Thank you! Our construction team will reach out to discuss your project.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BUILDING ENVELOPES SECTION - Modern Green Theme
+         ============================================ -->
+    <section class="company-section envelope-section" id="envelopes">
+        <div class="envelope-pattern"></div>
+        <div class="envelope-grid-lines"></div>
+        <div class="section-container">
+            <div class="envelope-header">
+                <span class="section-label envelope-label">Specialized Division</span>
+                <h2>Building Envelope Solutions</h2>
+                <p>Specialized building envelope services ensuring your structure is protected, energy-efficient, and built to last for generations.</p>
+            </div>
+
+            <div class="envelope-grid">
+                <div class="envelope-images">
+                    <!-- 
+                        BRAND_: BUILDING ENVELOPE IMAGES
+                        Replace these Unsplash URLs with your own images
+                        Recommended size: 800x600px minimum
+                    -->
+                    <div class="envelope-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop" alt="Modern building with glass facade">
+                        <div class="img-overlay">
+                            <span>Modern Facades</span>
+                        </div>
+                    </div>
+                    <div class="envelope-img">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" alt="Building exterior detail">
+                        <div class="img-overlay">
+                            <span>Precision Detail</span>
+                        </div>
+                    </div>
+                    <div class="envelope-img">
+                        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=400&h=300&fit=crop" alt="Sustainable building design">
+                        <div class="img-overlay">
+                            <span>Sustainable Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="envelope-content">
+                    <div class="envelope-description">
+                        <h3>Protecting What's Inside</h3>
+                        <p>Our building envelope division is dedicated to the science and art of creating weathertight, energy-efficient building enclosures. We combine cutting-edge materials with expert installation to protect your investment from the elements while maximizing performance and longevity.</p>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Exterior Wall Systems</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Roofing & Waterproofing</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Window & Door Systems</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Air Barrier Systems</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Thermal Insulation</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Cladding & Facades</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Envelope Consulting</span>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">✓</span>
+                                <span>Energy Audits & Upgrades</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="envelope-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Specialized</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">1M+</span>
+                            <span class="stat-label">Sq Ft Protected</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Code Compliant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Building Envelope Contact Form -->
+            <div class="envelope-form-container">
+                <div class="form-header">
+                    <h3>Contact Our Envelope Team</h3>
+                    <p>Get expert advice on your building envelope needs</p>
+                </div>
+                <!-- 
+                     ============================================
+                     FORMSPREE FORM #3 - BUILDING ENVELOPES
+                     
+                     TO CHANGE FORMSPREE CODE:
+                     Replace "YOUR_FORMSPREE_CODE_ENVELOPE" 
+                     below with your actual Formspree form ID.
+                     
+                     Example: https://formspree.io/f/xpzkgqwe
+                     
+                     TO CHANGE EMAIL RECIPIENT:
+                     Log into Formspree.io → Select this form → 
+                     Settings → Notifications → Update email
+                     ============================================
+                -->
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE_ENVELOPE" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="envelope-name">Full Name *</label>
+                            <input type="text" id="envelope-name" name="name" required placeholder="Alex Johnson">
+                        </div>
+                        <div class="form-group">
+                            <label for="envelope-email">Email Address *</label>
+                            <input type="email" id="envelope-email" name="email" required placeholder="alex@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="envelope-phone">Phone Number</label>
+                            <input type="tel" id="envelope-phone" name="phone" placeholder="(555) 456-7890">
+                        </div>
+                        <div class="form-group">
+                            <label for="envelope-building">Building Type</label>
+                            <select id="envelope-building" name="building_type">
+                                <option value="">Select building type...</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="residential">Residential</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="institutional">Institutional</option>
+                                <option value="mixed_use">Mixed Use</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="envelope-service">Service Needed</label>
+                            <select id="envelope-service" name="service_type">
+                                <option value="">Select a service...</option>
+                                <option value="assessment">Envelope Assessment</option>
+                                <option value="waterproofing">Waterproofing</option>
+                                <option value="cladding">Cladding & Facades</option>
+                                <option value="windows">Windows & Doors</option>
+                                <option value="insulation">Insulation Upgrade</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="energy_audit">Energy Audit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="envelope-property">Property Size</label>
+                            <select id="envelope-property" name="property_size">
+                                <option value="">Select size...</option>
+                                <option value="under_5000">Under 5,000 sq ft</option>
+                                <option value="5000_20000">5,000 - 20,000 sq ft</option>
+                                <option value="20000_50000">20,000 - 50,000 sq ft</option>
+                                <option value="over_50000">Over 50,000 sq ft</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="envelope-message">Project Details *</label>
+                            <textarea id="envelope-message" name="message" required placeholder="Describe your building envelope needs, current issues, and goals for the project..."></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Building Envelope Inquiry - Unified Group">
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit" class="submit-btn">Send Envelope Inquiry</button>
+                </form>
+                <div class="form-success" id="envelope-success">
+                    ✓ Thank you! Our envelope specialists will contact you shortly.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unified Brand Section -->
+    <section class="brand-section" id="about">
+        <div class="brand-content">
+            <span class="section-label brand-label">Why Choose Us</span>
+            <h2>The Power of Three.<br>The Strength of One.</h2>
+            <p>While each of our companies specializes in their own domain, we share a common commitment to quality, integrity, and customer satisfaction. When you work with one of us, you benefit from the expertise and resources of all three.</p>
+            
+            <div class="brand-values">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Specialized Expertise</h3>
+                    <p>Each company focuses on what they do best, ensuring you receive specialized knowledge and skill for every project you undertake with us.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Seamless Collaboration</h3>
+                    <p>Our teams work together effortlessly, providing integrated solutions when your project spans multiple disciplines or requires coordinated expertise.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Unified Quality</h3>
+                    <p>One standard of excellence across all three companies. Consistent communication, reliability, and results you can count on every single time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Unified<span>Group</span></h3>
+                <p>Three specialized companies, one trusted name. Delivering comprehensive solutions for all your building needs with excellence and integrity.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Our Companies</h4>
+                <a href="#plumbing">Plumbing Services</a>
+                <a href="#construction">Construction & Redevelopment</a>
+                <a href="#envelopes">Building Envelopes</a>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#plumbing">Get a Quote</a>
+                <a href="#about">Our Values</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="#">📍 123 Business Avenue</a>
+                <a href="#">Suite 100, City, State</a>
+                <a href="tel:5551234567">📞 (555) 123-4567</a>
+                <a href="/cdn-cgi/l/email-protection#f69f989099b683989f909f93929184998386d895999b">✉️ <span class="__cf_email__" data-cfemail="cba2a5ada48bbea5a2ada2aeafacb9a4bebbe5a8a4a6">[email&#160;protected]</span></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Unified Group. All rights reserved. | Plumbing | Construction & Redevelopment | Building Envelopes</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Handle form submissions with Formspree
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                // Show loading state
+                submitBtn.textContent = 'SENDING...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Show success message
+                        this.reset();
+                        const successDiv = this.closest('.plumbing-form-container, .construction-form-container, .envelope-form-container').querySelector('.form-success');
+                        if (successDiv) {
+                            successDiv.style.display = 'block';
+                            setTimeout(() => {
+                                successDiv.style.display = 'none';
+                            }, 6000);
+                        }
+                        submitBtn.textContent = '✓ SENT SUCCESSFULLY!';
+                        submitBtn.style.opacity = '1';
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }, 4000);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    submitBtn.textContent = '✕ ERROR - TRY AGAIN';
+                    submitBtn.style.opacity = '1';
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 4000);
+                    console.error('Form error:', error);
+                }
+            });
+        });
+
+        // Add scroll animation for sections
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.company-section, .brand-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a028e1206d3ce21a',t:'MTc3OTkyNTM4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
